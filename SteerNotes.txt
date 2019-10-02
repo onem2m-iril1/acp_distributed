@@ -1,0 +1,43 @@
+PermitRootLogin 
+Host a website to access the ACPs stored in the SQLite DB
+
+install lighttpd server instead of apache on rPi
+https://pimylifeup.com/raspberry-pi-lighttpd/
+
+https://www.instructables.com/id/Setup-a-Raspberry-Pi-PHP-web-server/
+https://www.instructables.com/id/Host-your-website-on-Raspberry-pi/
+
+sudo apt-get -y install lighttpd
+
+install latest PHP on rPi, 7.3.10 was latest at the time of th
+
+sudo apt install php7.3
+
+sudo apt install php7.3-cli php7.3-common php7.3-curl php7.3-mbstring php7.3-mysql php7.3-xml
+
+https://tecadmin.net/install-php-debian-9-stretch/
+
+sudo service lighttpd force-reload
+
+sudo chown www-data:www-data /var/www
+
+sudo chmod 775 /var/www #permission to write to this directory
+
+sudo usermod -a -G www-data pi #add the “Pi” user to the “www-data” group
+
+Reboot the Raspberry Pi, your Raspberry Pi web server is ready.
+
+if unable to change files via WinSCP then login to WinSCP as root
+Allow direct root login via ssh by using 
+PermitRootLogin yes in /etc/ssh/sshd_config.
+https://www.raspberrypi.org/forums/viewtopic.php?t=187483
+
+
+now run php sqlite on rpi
+sudo apt-get install php7.3-sqlite
+https://www.raspberrypi.org/forums/viewtopic.php?t=49502
+
+SQLite code:
+http://www.tutorialspoint.com/sqlite/sqlite_php.htm
+
+
