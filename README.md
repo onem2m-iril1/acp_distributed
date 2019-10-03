@@ -96,7 +96,7 @@ $ ./ACPserver
 KICS UET
 
 ## Team Members
-Muhammad Rehan
-Muhammad Ahsan
-Bilal Imran
-Asim Tanwir
+- Muhammad Rehan
+- Muhammad Ahsan
+- Bilal Imran
+- Asim Tanwir
