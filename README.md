@@ -19,7 +19,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Apache2, SQLite3, PHP7.3
+Apache2, SQLite3, PHP7.3 on Raspberry Pi 3B+
 
 Run this command to check if you already have apache2 installed
 ```
@@ -52,13 +52,12 @@ Install SQLite3 module for PHP. This package provides the SQLite3 module(s) for 
 ```
 $ sudo apt-get install php7.3-sqlite3
 ```
-Make sure the correct package is installed and apache restarted after:
+Make sure the correct package is installed and apache restarted after that using this command:
 ```
-$ sudo apt install php7.0-sqlite3
 $ sudo systemctl restart apache2
 ```
 If that didn't work:
-Then, correct the name for the extension in php.ini to:
+Then, remove the semicolon before these lines or correct the name for the extension in php.ini to:
 ```
 $ extension=sqlite3.so
 $ extension=pdo_sqlite.so
@@ -74,10 +73,12 @@ $ sudo apt-get install libssl-dev
 
 ### Installing
 
-Build and run the program in current directory using following commands 
+- Copy the "PDPserver" folder in /home/pi/. 
+- Copy the "html" folder in /var/www/
+- Build and run the program in current directory using following commands 
 
 ```
-$ cd temp01/PDPserver
+$ cd PDPserver/
 $ make
 $ ./ACPserver
 ``` 
