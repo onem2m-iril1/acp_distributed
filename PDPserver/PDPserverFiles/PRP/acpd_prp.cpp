@@ -104,9 +104,9 @@ namespace acpd_prp
 	   reqMsgIterator++;
 	   string from = reqMsgIterator->value;
 	   reqMsgIterator++;
-	   string type = reqMsgIterator->value;
-	   reqMsgIterator++;
 	   string op = reqMsgIterator->value;
+	   reqMsgIterator++;
+	   string type = reqMsgIterator->value;
 	   globalOperation = op;
 	   
 	   cout << "r to = ." << to << "." << endl;
@@ -124,7 +124,7 @@ namespace acpd_prp
 	   s = "INSERT INTO resource (ID,ResID,ACPID) VALUES ('13','//myMAF.provider.org/-/','4'); \
 	   INSERT INTO ACRt (ACRID,ACPID,fr,op,ty) VALUES ('7','4','0 2 481 1 100 3030 10011','1','3');";
 //	*/
-		s = "SELECT ResID, fr, op, ty FROM resource INNER JOIN ACRt ON resource.ACPID = ACRt.ACPID;";
+		//s = "SELECT ResID, fr, op, ty FROM resource INNER JOIN ACRt ON resource.ACPID = ACRt.ACPID;";
 	   char sql[s.length()+1];
 	   strcpy(sql, s.c_str());
 	   acpMatchFlag = 0; // initialize
