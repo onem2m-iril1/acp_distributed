@@ -38,10 +38,10 @@
 				<form method="POST" action="edit.php?id=<?php echo $erow['userid']; ?>">
 					<div class="row">
 						<div class="col-lg-2">
-							<label style="position:relative; top:7px;">ACRID:</label>
+							<label style="position:relative; top:7px;"></label>
 						</div>
 						<div class="col-lg-10">
-							<input type="text"  name="acrid" class="form-control" value="<?php echo $row['ACRID']; ?>">
+							<input type="hidden" name="acrid" class="form-control" value="<?php echo $row['ACRID']; ?>">
 						</div>
 					</div>
 					<div class="row">
@@ -80,14 +80,7 @@
 						</div>
 					</div>
 					<div style="height:10px;"></div>
-					<div class="row">
-						<div class="col-lg-2">
-							<label style="position:relative; top:7px;">Type1 (ty):</label>
-						</div>
-						<div class="col-lg-10">
-							<input type="text" name="ty1" class="form-control" value="<?php echo $row['ty']; ?>">
-						</div>
-					</div>
+					
                 </div> 
 				</div>
                 <div class="modal-footer">

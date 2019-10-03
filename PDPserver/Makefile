@@ -1,9 +1,9 @@
 
-mafserver: MbedJSONValue.o mafServer.o acpd_pdp.o acpd_prp.o acpd_pip.o acpd_reqres.o
-	c++ MbedJSONValue.o mafServer.o acpd_pdp.o acpd_prp.o acpd_pip.o acpd_reqres.o -o mafserver -lssl -lcrypto -lpthread -lsqlite3 
+ACPserver: MbedJSONValue.o ACPServer.o acpd_pdp.o acpd_prp.o acpd_pip.o acpd_reqres.o
+	c++ MbedJSONValue.o ACPServer.o acpd_pdp.o acpd_prp.o acpd_pip.o acpd_reqres.o -o ACPserver -lssl -lcrypto -lpthread -lsqlite3 
 
-mafServer.o: mafServer.cpp
-	c++ -c mafServer.cpp -lssl -lcrypto -pthread -lsqlite3
+ACPServer.o: ACPServer.cpp
+	c++ -c ACPServer.cpp -lssl -lcrypto -pthread -lsqlite3
 
 MbedJSONValue.o: MbedJSONValue.cpp
 	c++ -c MbedJSONValue.cpp 
@@ -21,4 +21,4 @@ acpd_reqres.o: /home/pi/temp01/PDPserver/PDPserverFiles/reqres/acpd_reqres.cpp
 	c++ -c /home/pi/temp01/PDPserver/PDPserverFiles/reqres/acpd_reqres.cpp
 
 clear:
-	rm -f MbedJSONValue.o mafServer.o acpd_pdp.o acpd_prp.o acpd_pip.o mafserver
+	rm -f MbedJSONValue.o ACPServer.o acpd_pdp.o acpd_prp.o acpd_pip.o ACPserver

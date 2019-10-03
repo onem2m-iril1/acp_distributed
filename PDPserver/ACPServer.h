@@ -26,9 +26,7 @@
 #include <openssl/err.h>
 #include <openssl/rand.h>
 #include <openssl/hmac.h>
-//#include "PDPServerFiles/PDP/a.h"
 #include "PDPserverFiles/PDP/acpd_pdp.h"
-//#include "a.h"
 
 #include "MbedJSONValue.h"
 #include "sqlite3.h"

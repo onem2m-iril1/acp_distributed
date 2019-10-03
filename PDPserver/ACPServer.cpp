@@ -4,7 +4,7 @@
 //	Date & Time:	June 08, 2019 | 19:09 PM
 //	Author:			Bilal Imran
 
-#include "mafServer.h"
+#include "ACPServer.h"
 
 int callback (void *NotUsed, int argc, char **argv, char **azColName) {
 	int i;
@@ -54,15 +54,6 @@ unsigned int psk_server_cb(SSL *ssl, const char *identity,
     } else
         printf("PSK client identity found\n");
    
-    /* here we could lookup the given identity e.g. from a database 
-    if (strcmp(identity, psk_identity) != 0) {
-        printf("PSK warning: client identity not what we expected"
-                   " (got '%s' expected '%s')\n", identity, psk_identity);
-        goto out_err;
-    } else {
-        printf("PSK client identity found\n");
-    } */
-
     /* convert the PSK key to binary */
     key = OPENSSL_hexstr2buf(psk_ret, &key_len);
     if (key == NULL) {
@@ -367,58 +358,19 @@ int Process_MSG(SSL *ssl) {
 	
 	cout << "Msg from the Client:" << endl;
 	serverbuf = recv_buf;
-	//printf("recv_buf: %s\n", recv_buf); 
-	//	/*
+
 	string strTemp = serverbuf;
 	std::cout << "MsgStart:" << serverbuf << endl;
 	std::cout << "MsgEnd" << endl;
-	pdphello();
-//	using namespace	acpd_pdp;
-	//getPEPrequest(strTemp);
-	if (acpd_pdp::getPEPrequest(strTemp))
+
+	if (acpd_pdp::getPEPrequest(strTemp)){
+		maf_string_buf = "1000";
 		cout << "ACP matched" << endl;
-	else
+	}
+	else{
+		maf_string_buf = "4005";
 		cout << "ACP NOT matched" << endl;		
-	
-/*
-	parse(MSG, serverbuf);
-	// Find 'op' Value	
-	if (MSG.hasMember("op")) {
-		op = MSG["op"].get<int>();
-		cout << "op: " << op << endl;
 	}
-	else {
-		cout << "'op' not specified" << endl;
-		return -1;
-	}
-	// Find 'ty' Value
-	if(MSG.hasMember("ty")) {
-		ty = MSG["ty"].get<int>();
-		std::cout << "ty: " << ty << endl;
-	}
-	else {
-		printf("'ty' not Specified\n");
-		return -1;
-	}
-	*/
-	return 0;
-}
-
-int MAFClientIDFind() {
-	int i, j;
-	i = 0;
-	while (i < 40) {
-		if (MAF_CLIENT_TO[i] == '-')
-			break;
-		i++;
-	}
-
-	if (i == 40) 
-		return -1;
-	
-	i = i + 2;
-	memcpy((char* ) strtemp, MAF_CLIENT_TO.c_str() + i, sizeof(strtemp)); 
-	printf("Fetched clientID is: %s\n", strtemp);
 	return 0;
 }
 
@@ -596,9 +548,6 @@ END:
 
 //	Main Function
 int main (void) {
-	// open the database
-	//dbclient.open();
-	//dbclient.printDB();
 	MAFServerStart();
 	return 0;
 }

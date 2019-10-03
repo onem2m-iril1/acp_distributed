@@ -66,16 +66,16 @@ namespace acpd_prp
 //		   cout << argv[i];
 		   if (azColName[i][0] == 'o' && azColName[i][1] == 'p')
 		   {
-			   cout << "gotOP" << endl;
+			   //cout << "gotOP" << endl;
 			   if (checkOp(globalOperation,argv[i]))
 			   {
-					cout << "matched.!";
+					//cout << "matched.!";
 					acpMatchFlag = 1;
 				}
 		   }
-		  printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+		  //printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
 	   }
-	   printf("\n");
+	   //printf("\n");
 	   return 0;
 	}
 

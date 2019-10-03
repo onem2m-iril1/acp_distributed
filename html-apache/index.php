@@ -1,5 +1,7 @@
 <?php
 	include('conn.php'); // Open DB
+
+//	/*
 	$sql =<<<EOF
       INSERT INTO ACRt (ACPID, fr, op, ty) VALUES ('1', '1f', '1', '1');
 EOF;
@@ -26,6 +28,7 @@ $row = $ret->fetchArray(SQLITE3_ASSOC);
 //print_r($row);
 //echo "acpid = " . $row[ACPID];
 //   $db->close();
+//	*/
 ?>
 
 
@@ -47,9 +50,10 @@ $row = $ret->fetchArray(SQLITE3_ASSOC);
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
 				<th>Sr.</th>
-				<th>ID</th>
+<!--				<th>ID</th>
 				<th>ACPID</th>
 				<th>ACRID</th>
+-->
 				<th>to (ResID)</th>
 				<th>fr</th>
 				<th>op</th>
@@ -64,10 +68,10 @@ $row = $ret->fetchArray(SQLITE3_ASSOC);
 					?>
 					<tr>
 						<td><?php echo $icounter;   ?></td>
-						<td><?php echo $row['ID'];   ?></td>
+<!--						<td><?php echo $row['ID'];   ?></td>
 						<td><?php echo $row['ACPID'];   ?></td>
 						<td><?php echo $row['ACRID'];   ?></td>
-						<td><?php echo $row['ResID'];   ?></td>
+	-->					<td><?php echo $row['ResID'];   ?></td>
 						<td><?php echo $row['fr'];		?></td>
 						<td><?php echo $row['op'];		?></td>
 						<td><?php echo $row['ty'];		?></td>
