@@ -4,10 +4,10 @@ OneM2M compliant distributed ACP (Access Control Policy) with PHP based web inte
 This is the PDP server containing the three policy points i.e. PIP, PRP and PDP as described in TR-0016-Authorization_Architecture_and_Access_Control_Policy-V2_0_0.pdf at http://www.onem2m.org/images/files/deliverables/Release2/TR-0016-Authorization_Architecture_and_Access_Control_Policy-V2_0_0.pdf
 
 - Policy Decision Point (PDP):
-PDP interacts with the PRP and PIP to get applicable authorization polices and attributes needed to evaluate authorization policies respectively, and then evaluates access requests using authorization policies to render an access control decision. The PDP is located in the Authorization service.
+PDP receives policy authorization request from PEP and processes it. PDP interacts with the PRP and PIP to get applicable authorization polices and attributes needed to evaluate authorization policies respectively, and then evaluates access requests using authorization policies to render an access control decision. The PDP is located in the Authorization service.
 
 - Policy Retrieval Point (PRP):
-PRP obtains applicable authorization policies according to an access control decision request. These applicable policies should be combined in order to get a finial access control decision. The PRP is located in the Authorization service.
+PRP obtains applicable authorization policies according to an access control decision request. These applicable policies are combined in order to get a final access control decision. The PRP is located in the Authorization service.
 
 - Policy Information Point (PIP):
 PIP provides attributes that are needed to evaluate authorization policies, for example the IP address of the requester, creation time of the resource, current time or location information of the requester. The PIP is located in the Authorization service.
@@ -83,6 +83,8 @@ $ make
 $ ./ACPserver
 ``` 
 
+## Hardware Tested
+* Tested on RaspberryPi-3B+ running 'Raspbian Buster Lite' (2019-07-10-raspbian-buster-lite)
 
 ### System Architechture
 
@@ -97,6 +99,9 @@ $ ./ACPserver
 KICS UET
 
 ## Team Members
+## Team Members
+- Dr. Ghalib A. Shah (Principal Investigator)
+- Dr. Ali Hammad Akbar (Co-Principal Investigator)
 - Muhammad Rehan
 - Muhammad Ahsan
 - Bilal Imran
