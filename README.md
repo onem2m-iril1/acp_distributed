@@ -90,7 +90,7 @@ $ ./ACPserver
 
 ![Alt text](SystemArchitechture.jpg?raw=true "System Architechture")
 
-### System Architechture
+### System Methodology
 
 ![Alt text](acpSteps.png?raw=true "System Methodology")
 
