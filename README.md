@@ -90,6 +90,11 @@ $ ./ACPserver
 
 ![Alt text](SystemArchitechture.jpg?raw=true "System Architechture")
 
+### System Architechture
+
+![Alt text](acpSteps.png?raw=true "System Methodology")
+
+
 ## Authors
 
 * **Muhammad Rehan** - *Initial work* - [rehan199](https://github.com/rehan199)
